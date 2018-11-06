@@ -23,6 +23,27 @@ function setup() {
   vid_1.mouseOver(playVid_1);
   vid_1.mouseOut(pauseVid_1);
 
+  // dophin vid 3!
+  vid_1 = createVideo(['Two-Minute Self-Introduction Speech_1.mp4', 'assets/Two-Minute Self-Introduction Speech_1.webmhd.webm']);;
+  vid_1.size(400, 300);
+
+  vid_1.mouseOver(playVid_1);
+  vid_1.mouseOut(pauseVid_1);
+
+  // dophin vid 4!
+  vid_1 = createVideo(['Two-Minute Self-Introduction Speech_2.mp4', 'assets/Two-Minute Self-Introduction Speech_2.webmhd.webm']);;
+  vid_1.size(400, 300);
+
+  vid_1.mouseOver(playVid_1);
+  vid_1.mouseOut(pauseVid_1);
+
+  // dophin vid 5!
+  vid_1 = createVideo(['Two-Minute Self-Introduction Speech.mp4', 'assets/Two-Minute Self-Introduction Speech.webmhd.webm']);;
+  vid_1.size(400, 300);
+
+  vid_1.mouseOver(playVid_1);
+  vid_1.mouseOut(pauseVid_1);
+
   
 }
 
