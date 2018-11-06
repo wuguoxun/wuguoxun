@@ -5,46 +5,33 @@ let vid_0;
 let vid_0_playing = false;
 let vid_1;
 let vid_1_playing = false;
+let vid_2;
+let vid_2_playing = false;
+
 let documentActive = false; // we need to make sure they engage with page before it can auto play
 
 
 function setup() {
   // dophin vid 1!
-  vid_0 = createVideo(['p3vtest1.mp4', 'assets/video1.webmsd.webm']);;
-  vid_0.size(400, 300);
+  vid_0 = createVideo(['im poppy.mp4', 'assets/im poppy.webmhd.webm']);;
+  vid_0.size(300, 300);
 
   vid_0.mouseOver(playVid_0);
   vid_0.mouseOut(pauseVid_0);
 
   // dophin vid 2!
-  vid_1 = createVideo(['p3vtest2.mp4', 'assets/video2.webmsd.webm']);;
-  vid_1.size(400, 300);
+  vid_1 = createVideo(['Two-Minute Self-Introduction Speech_1.mp4', 'assets/Two-Minute Self-Introduction Speech_1.webmhd.webm']);;
+  vid_1.size(300, 300);
 
   vid_1.mouseOver(playVid_1);
   vid_1.mouseOut(pauseVid_1);
 
   // dophin vid 3!
-  vid_1 = createVideo(['Two-Minute Self-Introduction Speech_1.mp4', 'assets/Two-Minute Self-Introduction Speech_1.webmhd.webm']);;
-  vid_1.size(400, 300);
+  vid_2 = createVideo(['im poppy.mp4', 'assets/im poppy.webmhd.webm']);;
+  vid_2.size(300, 300);
 
-  vid_1.mouseOver(playVid_1);
-  vid_1.mouseOut(pauseVid_1);
-
-  // dophin vid 4!
-  vid_1 = createVideo(['Two-Minute Self-Introduction Speech_2.mp4', 'assets/Two-Minute Self-Introduction Speech_2.webmhd.webm']);;
-  vid_1.size(400, 300);
-
-  vid_1.mouseOver(playVid_1);
-  vid_1.mouseOut(pauseVid_1);
-
-  // dophin vid 5!
-  vid_1 = createVideo(['Two-Minute Self-Introduction Speech.mp4', 'assets/Two-Minute Self-Introduction Speech.webmhd.webm']);;
-  vid_1.size(400, 300);
-
-  vid_1.mouseOver(playVid_1);
-  vid_1.mouseOut(pauseVid_1);
-
-  
+  vid_2.mouseOver(playVid_2);
+  vid_2.mouseOut(pauseVid_2);
 }
 
 function draw() {}
@@ -72,6 +59,20 @@ function pauseVid_1() {
   vid_1.pause();
   vid_1_playing = false;
 }
+
+function playVid_2() {
+  if (documentActive) {
+    vid_2.loop();
+    vid_2_playing = true;
+  }
+}
+
+function pauseVid_2() {
+  vid_2.pause();
+  vid_2_playing = false;
+}
+
+
 
 function mousePressed() {
   documentActive = true; // since they have clicked, now we can play
