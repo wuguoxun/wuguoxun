@@ -1,11 +1,12 @@
 body {
-  margin: 30px auto;
-  max-width: 1000px;
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.5;
-  padding: 30px 20px;
+  margin: 10px auto;
+  max-width: 1100px;
+
+  text-align: center;
+  align-content: center;
 }
 
-h1 {
-  padding: 20px 0px 10px 0px;
-}
+/* heading text */
+
+
+/* Centers images */
