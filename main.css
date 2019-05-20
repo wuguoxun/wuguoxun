@@ -70,7 +70,7 @@ portfolio entries */
 
 .embed-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 15.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -84,5 +84,5 @@ portfolio entries */
   top: 0;
   left: 0;
   width: 90%;
-  height: 900%;
+  height: 90%;
 }
