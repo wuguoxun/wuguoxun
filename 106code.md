@@ -1,4 +1,4 @@
-**
+
 import processing.serial.*;
 Serial myPort;
 String myText="";
