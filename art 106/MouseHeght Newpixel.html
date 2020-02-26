@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import processing.serial.*;</p>
+<p class="p2"><br></p>
+<p class="p1">Serial myPort;<span class="Apple-converted-space">  </span>// create object from Serial class</p>
+<p class="p2"><br></p>
+<p class="p1">int pos; //mouse position maped to neopixel index</p>
+<p class="p1">int mHeight; //mouse height mapped to neopixel brightness</p>
+<p class="p1">String val; //message</p>
+<p class="p1">String oldVal;</p>
+<p class="p2"><br></p>
+<p class="p1">void setup()</p>
+<p class="p1">{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>size(1000, 200);</p>
+<p class="p1">myPort = new Serial(this, Serial.list()[0], 9600);<span class="Apple-converted-space">  </span>//myPort = new Serial(this, "COM10", 9600);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">void draw() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>pos = int(map(mouseX, 0, width, 0, 3));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>mHeight = int(map(mouseY, 0, height, 0, 10));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>val = ""; //clear message just in case</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>stroke(120);</p>
+<p class="p2"><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (int i=0; i &lt; 3; i++) //segment lines for reference</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float x = width/3;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>x = x*i;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line(x, 0, x, height);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (int j = 0; j &lt; 3; j++) //construct val string of 15 digits</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (j == pos) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>val = val + mHeight;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>val = val + "";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>val = val + ")"; //add ")" for Arduino</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (val.equals(oldVal) == false)<span class="Apple-converted-space">  </span>//send only if value changed</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>myPort.write(val);<span class="Apple-converted-space">         </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>println(val);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>delay(1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>oldVal = val; //update oldVal</p>
+<p class="p1">}</p>
+</body>
+</html>

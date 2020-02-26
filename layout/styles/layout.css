@@ -33,11 +33,11 @@ File: Layout CSS
 --------------------------------------------------------------------------------------------------------------- */
 #pageintro{padding:200px 0;}
 
-#pageintro article{display:block; max-width:100%; overflow:hidden;}
+#pageintro article{display:block; max-width:65%; overflow:hidden;}
 #pageintro article *{word-wrap:break-word;}
-#pageintro .heading{margin-bottom:20px; font-size:4rem;}
+#pageintro .heading{margin-bottom:20px; font-size:6rem;}
 #pageintro p{margin:0; text-transform:uppercase; font-weight:700; font-size:1.4rem;}
-#pageintro footer{margin-top:20px;}
+#pageintro footer{margin-top:80px;}
 
 
 /* Content Area
@@ -261,14 +261,14 @@ td{border-width:0 1px;}
 
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
-body{color:#80a385; background-color:#80a385;}
-a{color:#80a385;}
+body{color:#CBCBCB; background-color:#4A4E57;}
+a{color:#E43F21;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
 label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:rgba(150,63,63,55)/* #E43F21 */;}
+.overlay::after{color:inherit; background-color:rgba(228,63,33,.55)/* #E43F21 */;}
 
 .btn, .btn.inverse:hover{color:#FFFFFF; background-color:#E43F21; border-color:#E43F21;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
@@ -281,7 +281,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 .row1{color:#929292; background-color:#FFFFFF;}
 .row2, .row2 a{}
 .row3{color:#929292; background-color:#FFFFFF;}
-.row4{color:#80a385; background-color:#80a385;}
+.row4{color:#CBCBCB; background-color:#32353C;}
 .row5, .row5 a{color:#CBCBCB; background-color:#4A4E57;}
 
 
@@ -402,7 +402,7 @@ table a, #comments a{background-color:inherit;}
 
 	#pageintro article{max-width:none;}
 	#pageintro .heading{font-size:3rem;}
-
+	
 	.sectiontitle, .testimonials article{text-align:left;}
 
 	#footer{padding-bottom:50px;}/* Not needed, just looks a little better */
